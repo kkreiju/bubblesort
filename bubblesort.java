@@ -1,8 +1,13 @@
+import javax.swing.*;
+
 public class bubblesort {
    public static void main(String[] args) {
+      JLabel result = new JLabel("", 0);
+
       int[] randomizedset = { 4, 3, 2, 1 };
       int temp;
       boolean unsorted = true;
+      String sorted = "";
 
       System.out.print("Original: ");
       for (int i = 0; i < randomizedset.length; i++) {
@@ -50,6 +55,17 @@ public class bubblesort {
 
       for (int i = 0; i < randomizedset.length; i++) {
          System.out.print(randomizedset[i] + " ");
+         String sortemp = sorted + randomizedset[i];
+         sorted = sortemp + " ";
       }
+
+      JFrame window = new JFrame("Bubble Sort Result");
+      window.setSize(300, 150);
+      window.setVisible(true);
+      window.setLocationRelativeTo(null);
+      window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+      result.setText(sorted);
+      window.add(result);
    }
 }
