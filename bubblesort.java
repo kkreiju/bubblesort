@@ -1,6 +1,6 @@
 public class bubblesort {
    public static void main(String[] args) {
-      int[] randomizedset = { 16, 3, 29, 12, 37, 15, 15, 1 };
+      int[] randomizedset = { 4, 3, 2, 1 };
       int temp;
       boolean unsorted = true;
 
@@ -14,7 +14,7 @@ public class bubblesort {
       while (unsorted == true) {
          for (int i = 0; i < randomizedset.length; i++) {
             if (i != 0) {
-               if (randomizedset[i] < randomizedset[i - 1] || randomizedset[i] == randomizedset[i-1]) {
+               if (randomizedset[i] <= randomizedset[i - 1]){
                   temp = randomizedset[i - 1];
                   randomizedset[i - 1] = randomizedset[i]; 
                   randomizedset[i] = temp;
